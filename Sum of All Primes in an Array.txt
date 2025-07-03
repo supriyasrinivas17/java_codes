@@ -1,0 +1,42 @@
+Sum of All Primes in an Array :
+
+solution :
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        int a[] = new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+            boolean result = isPrime(a[i]);
+            if(result){
+                sum += a[i];
+            }
+        }
+        if(sum!=0){
+            System.out.println(sum);
+        }
+        else{
+            System.out.println("No Primes");
+        }
+    }
+    
+    public static boolean isPrime(int num){
+        if(num <=1){
+            return false;
+        }
+        for(int i = 2 ; i < num ; i++ ){
+            if(num%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+}
